@@ -153,3 +153,17 @@ address creation/editing, modal close/Escape and simulated saving in the local
 prototype. Use GitHub Pages from main/root for this standalone site. Publish to
 RegOke/Master-admin only. Check the Pages deployment before claiming it is live.
 No session tokens, authentication fields or production scripts are included.
+
+IMPLEMENTATION UPDATE — 10 NOVEMBER 2026
+Implemented requested Figma frame 438:4982 (Custom-contact-details). Contact
+Details uses repeatable email/phone rows with name selects, custom-name toggles,
+clear controls, add buttons and remove menus. The three address cards shown in
+the design now sit under Contact Details with edit/delete menus and clipboard
+copy controls. Default values follow that frame. The surrounding admin page
+remains the captured baseline; right-hand supporting cards reflow after the
+address cards move into the main column.
+
+Editable source is in source/; scripts/build.py creates self-contained root
+index.html and source.zip. The ZIP contains source/, scripts/build.py, README,
+this handover and .nojekyll. Changes remain local to the page and reset on
+refresh. No Advoc8 API or production data submission is connected.

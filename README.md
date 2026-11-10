@@ -2,12 +2,14 @@
 
 [Open the prototype](https://regoke.github.io/Master-admin/)
 
-Faithful baseline of Anthony Albanese's master person edit page, captured from Advoc8 staging on 10 November 2026. The original product CSS, fonts, navigation, fields, content and right-hand cards are preserved. Fixed email and phone fields remain as specified in the handover.
+Anthony Albanese's master person edit page, based on Advoc8 staging and updated to Figma frame 438:4982 in Custom contact details. Contact Details now has repeatable email and phone rows, selectable or custom names, three-dot actions, and compact address cards. The rest of the page retains the captured product CSS, fonts, fields and supporting cards.
 
 ## Local interactions
 
 - Edit fields, unlock or clear first/last names, and add/remove name rows.
-- Search/select existing dropdown choices and clear selections.
+- Search/select existing admin dropdown choices and clear selections.
+- Add/remove email and phone rows, select a contact name, or use Add new email/phone name and Choose existing to enter a custom name.
+- Use address three-dot menus to edit/delete addresses and the copy control to copy their text.
 - Create, edit and delete addresses, including after all addresses have been removed.
 - Populate address fields from captured templates, choose or enter an address type, and set one primary address per type.
 - Close dialogs with the header close button or Escape; keyboard focus stays within open dialogs.
