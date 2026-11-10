@@ -27321,6 +27321,8 @@ body.prototype-modal-open {overflow:hidden}
 .contact-address-menu {flex:none;margin-left:auto}
 .contact-address-kind .address-type {display:block}
 
+#contact-details .contact-remove {display:flex;align-items:center;justify-content:center;width:38.094px;height:38.094px;padding:0;border:0;border-radius:5.625px}
+
 </style></head><body class="admin">
     
 
@@ -28648,7 +28650,7 @@ For myself, I will be satisfied if I can be remembered as someone who will stand
       <button type="button" class="contact-name-toggle">Add new ${kind} name</button>
     </div>
     <div class="contact-value-field"><label for="${id}-value">${kind==='email'?'Email address':'Phone number'}</label><input id="${id}-value" class="form-control" type="${kind==='email'?'email':'tel'}" name="contacts[${id}][value]" value="${esc(value)}"></div>
-    <div class="dropdown contact-row-menu"><button type="button" class="btn contact-more" data-toggle="dropdown" aria-label="${title} actions" aria-haspopup="true" aria-expanded="false">${contactIcon('ellipsis')}</button><div class="dropdown-menu dropdown-menu-right"><button type="button" class="dropdown-item text-danger" data-remove-contact>Remove ${kind}</button></div></div>`;
+    <div class="contact-row-menu"><button type="button" class="btn btn-link text-danger contact-remove" aria-label="Remove ${kind}" data-remove-contact><i class="far fa-trash" aria-hidden="true"></i></button></div>`;
     const select=$('select',row),custom=$('.contact-custom-name',row),toggle=$('.contact-name-toggle',row),existing=$('.contact-name-existing',row);
     renderSelection(select);
     toggle.onclick=()=>{

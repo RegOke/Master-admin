@@ -157,7 +157,7 @@ No session tokens, authentication fields or production scripts are included.
 IMPLEMENTATION UPDATE — 10 NOVEMBER 2026
 Implemented requested Figma frame 438:4982 (Custom-contact-details). Contact
 Details uses repeatable email/phone rows with name selects, custom-name toggles,
-clear controls, add buttons and remove menus. The three address cards shown in
+clear controls, add buttons and direct red trash buttons. The three address cards shown in
 the design now sit under Contact Details with edit/delete menus and clipboard
 copy controls. Default values follow that frame. The surrounding admin page
 remains the captured baseline; right-hand supporting cards reflow after the

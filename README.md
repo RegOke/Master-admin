@@ -2,7 +2,7 @@
 
 [Open the prototype](https://regoke.github.io/Master-admin/)
 
-Anthony Albanese's master person edit page, based on Advoc8 staging and updated to Figma frame 438:4982 in Custom contact details. Contact Details now has repeatable email and phone rows, selectable or custom names, three-dot actions, and compact address cards. The rest of the page retains the captured product CSS, fonts, fields and supporting cards.
+Anthony Albanese's master person edit page, based on Advoc8 staging and updated to Figma frame 438:4982 in Custom contact details. Contact Details now has repeatable email and phone rows, selectable or custom names, direct red trash buttons, and compact address cards. The rest of the page retains the captured product CSS, fonts, fields and supporting cards.
 
 ## Local interactions
 
