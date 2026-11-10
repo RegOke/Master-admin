@@ -1,0 +1,155 @@
+ADVOC8 MASTER ADMIN PROTOTYPE — HANDOVER
+Updated 10 November 2026
+
+NEXT CHAT STARTER
+Continue the Advoc8 master admin prototype in the separate Master-admin project.
+Use this handover and inspect the existing code before making changes. Keep the
+current staging page visually intact except for changes I explicitly request.
+The first version is a faithful baseline of the current edit screen, not a
+redesign of the admin contact details. Ask for the latest design if proposing
+or implementing the flexible contact-details changes.
+
+PROJECTS AND REFERENCES
+Staging page to reproduce:
+https://app-staging.advoc8.co/admin/master_people/RBoCXY/edit
+This is Anthony Albanese's master record (id 63). Staging requires signed-in
+admin access in the user's browser. Use browser access to inspect it; never
+submit changes to staging while testing the prototype.
+
+New, separate repository:
+https://github.com/RegOke/Master-admin
+Intended GitHub Pages URL:
+https://regoke.github.io/Master-admin/
+The URL is only live after Pages deployment has completed.
+
+Existing customer-facing prototype (separate project; preserve it):
+https://regoke.github.io/Custom-details-2/
+https://github.com/RegOke/Custom-details-2
+
+Design system:
+https://www.figma.com/design/kLPZjGemCwoDWNWKWyIlAr/Design-system
+Customer contact-details flows:
+https://www.figma.com/design/v24qXdrcEWfMhubQ8842IG/Custom-contact-details
+Key past nodes: 296-10716 (addresses and broader flow), 369-2483 (label
+suggestions replacing blue link), 192-8624 (earlier annotated exact flow).
+Inspect the latest relevant Figma frames before implementing a requested change;
+do not assume an older frame remains the final design.
+
+LOCAL FILES
+Workspace: /Users/regoke/Documents/Codex/2026-11-03/i-wa
+Admin source: Master-admin/
+  index.html — cleaned, editable markup captured from staging
+  assets/product.css — actual staging product stylesheet with local assets
+  assets/ — Cerebri Sans, product icon fonts, logo and supporting imagery
+  prototype.css — minimal standalone interaction styles
+  prototype.js — local interactions, dropdowns and modal handling
+  address-template.html — cleaned reference copy of existing address modal
+  HANDOVER.txt — this document
+Packaged publication files: outputs/master-admin-upload/
+The published index.html is self-contained. source.zip contains editable source.
+To preview editable source: python3 -m http.server 6274 --directory Master-admin
+Then open http://127.0.0.1:6274/
+Do not accidentally edit or publish the older Custom-details directory.
+
+PRODUCT CONTEXT
+Advoc8 is a stakeholder/public-affairs product. Users work with people and
+organisations, contact details, political information, staff, activities, feeds,
+agenda items, notes and custom fields. Reg is the first design hire, building a
+shared Figma design system and prototypes for developer handoff.
+
+There are two sources of contact information:
+1. Advoc8-managed master details, maintained centrally by Advoc8 staff through
+   admin screens and shown on stakeholder profiles.
+2. Customer-added custom details, maintained by the customer's team and visible
+   within that team. They supplement master details and should not silently
+   overwrite or become part of the central master record.
+
+Important terminology: use “Custom details” in the customer-facing prototype.
+Earlier iterations used “Private details”; Reg explicitly changed this.
+“Only visible to team” is the visibility message, not “Only visible to you”.
+
+WHY ADMIN IS BEING EXPLORED
+Current master admin uses fixed email slots (Email, Email 2, Email 3, Email 4)
+and fixed work/mobile phone fields. Addresses are separate cards on the right.
+The customer custom-details feature supports individual entries, labels and
+addresses. Will proposed making master contact details work in the same way,
+so managed and customer-added details can be displayed together consistently.
+
+An MVP can leave master admin as it is and ship customer custom details first.
+Admin parity is a separate scope decision, not a decision already agreed here.
+Harry raised exports as a consideration if labels are unrestricted. Email labels
+being optional was discussed, but was not conclusively decided in the supplied
+conversation. Phone types already include work/mobile. Addresses currently have
+both a name and a type; preserve that distinction until a new design changes it.
+
+Possible future admin work: replace fixed contact slots with repeatable email
+and phone entries, supporting add/edit/remove and optional descriptive labels;
+reuse address editing patterns. Keep user-specific custom details separate from
+centrally managed contacts. Confirm label/export decisions with the team rather
+than inventing rules in a prototype.
+
+CURRENT BASELINE SCOPE
+Preserve: left navigation, heading, Settings/Staff navigation, names, Basic
+Details, Political Details, First Speech, Contact Details, Other Details,
+Admin Details, bottom Update/Archive actions and right-hand Addresses, Feeds,
+Related Mentions, Staff and Links cards. Match spacing, typography, colours,
+rounding, order and original content using the captured product stylesheet.
+
+The prototype supports local field editing, existing dropdown choices, clearing
+selections, adding/removing name rows, the captured New Address form, local
+address editing/deletion, modal close and Escape, and a simulated save. Changes
+reset on refresh. It has no Advoc8 backend. Sidebar destinations and other admin
+screens are outside this one-page prototype; secondary supporting dialogs are
+demonstration placeholders rather than verified copies of those other screens.
+Do not claim that every admin workflow is implemented or validated.
+
+DESIGN SYSTEM AND INTERACTION PREFERENCES
+Use existing Advoc8 UI patterns. Reg strongly prefers few steps, compact default
+states, minimal copy and no duplicate buttons, repeated notices or extra panels.
+Most customers will not add custom contacts, so the empty state should be compact.
+Do not add unsolicited alternative versions or recommendations to the prototype.
+Include a close icon in modal headers. Align card actions consistently to the
+right. Tooltips appear on hover/focus; informative icons keep the normal cursor.
+Tooltip arrows point towards their trigger. Preserve the rest of each page.
+
+Typography: Cerebri Sans, available in Figma via uploaded fonts. Body Default and
+Small have Regular, SemiBold and Bold styles. Button Small/Default/Large now use
+Cerebri Sans Medium across Primary/Secondary/Danger; control/input styles remain
+separate. For exact HTML reproduction use the captured product CSS, not guessed
+Figma-to-CSS measurements.
+
+Figma components use auto layout, shared variables/styles, boolean visibility
+properties and instance swaps. Avoid redundant size/style variants. Icons use
+padded 20px masters with sizing centralised in Icon slot; sizes include 12/16/20/24.
+There are independent swappable trailing icons for form inputs (up to two).
+The small triangle is searchable as triangle/caret/dropdown; small x is searchable
+as clear/small x/cross/xmark/remove. Both scale and remain centred.
+
+Useful component references in the Design-system file:
+Textfield set 64:88; Select set 64:658; Search wrapper 95:265.
+Flyout / Suggestions set 217:692, Style=Standard or Pointer.
+Standard master 207:656; Pointer master 217:681.
+Input flyout comparison examples 221:740.
+Triangle set 204:473 (Down 204:467, Up 204:470).
+Clear small x 211:465.
+Primary button set 63:76; Secondary 63:384; Danger 63:692.
+Button weight reference 225:296. Card referenced earlier at 66:55.
+Some Figma library changes may need publishing before appearing in other files.
+Figma sessions must be created afresh in a new chat; do not reuse session UUIDs
+or include credentials in this handover, source code or repository.
+
+CUSTOMER PROTOTYPE DECISIONS TO REUSE WHEN RELEVANT
+New-entry modal headings: “New email” and “New phone number”.
+Label input suggestions must work for both email and phone number.
+Use the suggestions flyout in place of the former blue link inside the modal.
+Allow descriptive custom labels while avoiding duplicate UI to choose them.
+Managed marker tooltip: “Managed by Advoc8”.
+Custom/team-only marker tooltip: “Only visible to team”.
+The exact Figma design takes priority over earlier assistant suggestions.
+
+VERIFICATION AND PUBLICATION
+Verify layout against staging, then field editing, select/clear, name rows,
+address creation/editing, modal close/Escape and simulated saving in the local
+prototype. Use GitHub Pages from main/root for this standalone site. Publish to
+RegOke/Master-admin only. Check the Pages deployment before claiming it is live.
+No session tokens, authentication fields or production scripts are included.
